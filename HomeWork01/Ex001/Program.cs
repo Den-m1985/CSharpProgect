@@ -3,10 +3,10 @@
 //a = 2 b = 10 -> max = 10
 //a = -9 b = -3 -> max = -3
 
-Console.WriteLine("Entered first number");
+Console.WriteLine("Enter the first number");
 int number1 = Convert.ToInt16(Console.ReadLine());
 
- Console.WriteLine("Entered second number");
+ Console.WriteLine("Enter the second number");
 int number2 = Convert.ToInt16(Console.ReadLine());
 
 if (number1 > number2)
