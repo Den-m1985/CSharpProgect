@@ -6,27 +6,18 @@
 
 Console.Clear();
 Console.WriteLine("Введите 3-х значное число");
-int number = Convert.ToInt32(Console.ReadLine());
-/*
-int a = 12545;
-string str = a.ToString();
-Console.WriteLine(str[4]);
-*/
+int ThreeNumbers = Convert.ToInt32(Console.ReadLine());
 
-int k= number;
-while (k >= 100) k /= 10;
+if (ThreeNumbers >= 100 && ThreeNumbers <= 999)
 {
-    if (number >= 100)
-    {
-        int d = k % 10;
-        Console.Write("Второе число ");
-        Console.WriteLine(d);
-    } 
-    else
-    {
-        Console.WriteLine("Упссс, что-то пошло не так. Не хватает цифр, или поменяй знак на +");
+    ThreeNumbers/= 10;
+    int SecondNumber = ThreeNumbers % 10;
+    Console.Write("Второе число ");
+    Console.WriteLine(SecondNumber);
     }
-    
+else
+{
+    Console.WriteLine("Упссс, что-то пошло не так. Не хватает цифр, их много, или поменяй знак на +");
 }
 Console.Write("Нажми пробел чтоб выйти");
 Console.ReadKey();
