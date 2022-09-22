@@ -10,11 +10,12 @@ int ThreeNumbers = Convert.ToInt32(Console.ReadLine());
 
 if (ThreeNumbers >= 100 && ThreeNumbers <= 999)
 {
+    //Console.WriteLine("Вторая цифра: {0} ", ThreeNumbers.ToString().ToCharArray()[1]);
     ThreeNumbers/= 10;
     int SecondNumber = ThreeNumbers % 10;
     Console.Write("Второе число ");
     Console.WriteLine(SecondNumber);
-    }
+}
 else
 {
     Console.WriteLine("Упссс, что-то пошло не так. Не хватает цифр, их много, или поменяй знак на +");
