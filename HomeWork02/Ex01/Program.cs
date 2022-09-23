@@ -6,13 +6,13 @@
 
 Console.Clear();
 Console.WriteLine("Введите 3-х значное число");
-int ThreeNumbers = Convert.ToInt32(Console.ReadLine());
+int source = Convert.ToInt32(Console.ReadLine());
 
-if (ThreeNumbers >= 100 && ThreeNumbers <= 999)
+if (source >99 && source < 1000)
 {
     //Console.WriteLine("Вторая цифра: {0} ", ThreeNumbers.ToString().ToCharArray()[1]);
-    ThreeNumbers/= 10;
-    int SecondNumber = ThreeNumbers % 10;
+    source/= 10;
+    int SecondNumber = source % 10;
     Console.Write("Второе число ");
     Console.WriteLine(SecondNumber);
 }
