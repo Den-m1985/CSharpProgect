@@ -15,16 +15,16 @@ for (int i = 0; i < Length; i++)
 }
 var str = String.Join(" ", array);
 int sum = 0;
-int su = 0;
+int average = 0;
 for (int i = 0; i < Length; i++)
 {
     sum = sum + array[i];
-    su = sum / Length;
+    average = sum / Length;
 }
 
 Console.WriteLine(str);
 Console.Write("кол-во цифр в массиве: ");
 Console.WriteLine(Length);
 Console.Write("Среднеарифметическое: ");
-Console.Write(su);
+Console.Write(average);
 
