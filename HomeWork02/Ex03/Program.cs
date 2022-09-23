@@ -4,10 +4,29 @@
 //7 -> да
 //1 -> нет
 
+Console.Clear();
+Console.WriteLine("Введите число");
+int source = Convert.ToInt32(Console.ReadLine());
 
+if (source > 0 && source < 8)
+{
+    if (source > 5 && source < 8)
+    {
+        Console.Write("Этот день выходной: ");
+        Console.WriteLine(source);
 
+    }
+    else
+    {
+        Console.Write("В этот день иди работай: ");
+        Console.WriteLine(source);
+    }
 
-int Three = 123 %10;
+}
+else
+{
+    Console.WriteLine("Упссс, что-то пошло не так. Не хватает цифр, их много, или поменяй знак на +");
+}
 
-Console.WriteLine(Three);
-
+Console.Write("Нажми пробел чтобы выйти");
+Console.ReadKey();
