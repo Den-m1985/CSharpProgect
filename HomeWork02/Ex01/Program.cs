@@ -13,12 +13,12 @@ if (source >99 && source < 1000)
     //Console.WriteLine("Вторая цифра: {0} ", ThreeNumbers.ToString().ToCharArray()[1]);
     source/= 10;
     int SecondNumber = source % 10;
-    Console.Write("Второе число ");
-    Console.WriteLine(SecondNumber);
+    Console.WriteLine("Второе число: " + SecondNumber );
+    //Console.WriteLine(SecondNumber);
 }
 else
 {
     Console.WriteLine("Упссс, что-то пошло не так. Не хватает цифр, их много, или поменяй знак на +");
 }
-Console.Write("Нажми пробел чтоб выйти");
+Console.WriteLine("Нажми пробел чтоб выйти");
 Console.ReadKey();
