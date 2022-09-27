@@ -21,19 +21,21 @@ void PrintData(string prefix, string value)
 
 string PolyandrTest(int num)
 {
-   if (num /10000 == num%10 && num /1000 == (num/10)%10)
-    
-    return "число полиндром";
+    if (num / 10000 == num % 10 && (num / 1000) %10 == (num / 10) % 10)
+
+        return "число полиндром";
     else
-    return "число неполиндром";
+    {
+        return "число неполиндром";
+    }
 }
 
-
-if (num >= 10000 && num < 100000)
+int number = ReedData("Введите 5-ти значное число ");
+if (number >= 10000 && number < 100000)
 {
-    PrintData();
+    PrintData(PolyandrTest(number), "");
 }
 else
 {
-    PrintData();
+    PrintData("Вы ввели не 5-ти значное число", "");
 }
