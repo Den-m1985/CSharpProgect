@@ -50,7 +50,7 @@ void Print(int[] array)
 }
 
 //Ищем общие часы
-void FindOverlap(int array1, int array2, int array3)
+void FindOverlap(int[] array1, int[] array2, int[] array3)
 {
     int overLap = 0;
     for (int i1 = 0; i1 < array1.Length; i1++)
@@ -70,7 +70,7 @@ void FindOverlap(int array1, int array2, int array3)
                 }
             }
         }
-        Console.WriteLine(overLap);
+        //Console.WriteLine(overLap);
     }
     //return overLap;
 }
