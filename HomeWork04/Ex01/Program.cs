@@ -15,7 +15,7 @@
 11-12
 */
 
-
+// Считываем данные с консоли
 int ReedData(string line)
 {
     Console.WriteLine(line);
@@ -23,49 +23,34 @@ int ReedData(string line)
     return number;
 }
 
-
-int GetIntValue(int min, int max)
-{
-  return new Random().Next(min, max);
-}
-
+// Создаем массив
 int[] CreateArray(int size)
 {
-  return new int[size];
+    return new int[size];
 }
 
-void Fill(int[] array)
+// Заполняем массив
+void Fill(int[] array, int from)
 {
-  int size = array.Length;
-  int i = 0;
-
-  while (i < size)
-  {
-    array[i] = GetIntValue(1, 23);// часы работы с 1 -23.
-    i++;
-  }
+    for (var i = 0; i < array.Length; i++)
+        array[i] = from++;
 }
 
+//Печатаем массив
 void Print(int[] array)
 {
-  int i = 0;
-  int size = array.Length;
-  while (i < size)
-  {
-    Console.Write(array[i] + " ");
-    i++;
-  }
-  Console.WriteLine();
+    int i = 0;
+    int size = array.Length;
+    while (i < size)
+    {
+        Console.Write(array[i] + " ");
+        i++;
+    }
+    Console.WriteLine();
 }
 
-
-
-/*
-int[] array1 = { 9, 10, 11, 12 };
-int[] array2 = { 10, 11, 12 };
-int[] array3 = { 11, 12, 13 };
-
-int FindOverlap(int array)
+//Ищем общие часы
+void FindOverlap(int array1, int array2, int array3)
 {
     int overLap = 0;
     for (int i1 = 0; i1 < array1.Length; i1++)
@@ -87,9 +72,10 @@ int FindOverlap(int array)
         }
         Console.WriteLine(overLap);
     }
-    return overLap;
+    //return overLap;
 }
-*/
+
+
 void PrintData(string prefix, string value)
 {
     Console.Write(prefix + value);
@@ -102,49 +88,43 @@ int ExitMagazin2 = ReedData("Введите час выхода в магази�
 int EnterMagazin3 = ReedData("Введите час входа в магазин 3го массива ");
 int ExitMagazin3 = ReedData("Введите час выхода в магазин 3го массива ");
 
-int length = GetIntValue(EnterMagazin1, ExitMagazin1);
 
-int fjfgj = ExitMagazin1 - EnterMagazin1; //кол-во часов
+int countHours1 = ExitMagazin1 - EnterMagazin1 + 1; //кол-во часов
+int countHours2 = ExitMagazin2 - EnterMagazin2 + 1;
+int countHours3 = ExitMagazin3 - EnterMagazin3 + 1;
 
 
-int[] size1 = CreateArray(fjfgj);
-//int size1 = ExitMagazin1 - EnterMagazin1;
-int size2 = ExitMagazin2 - EnterMagazin2;
-int size3 = ExitMagazin3 - EnterMagazin3;
+int[] size1 = CreateArray(countHours1);
+int[] size2 = CreateArray(countHours2);
+int[] size3 = CreateArray(countHours3);
 
-Print(fjfgj);
-Fill(fjfgj);
 
-PrintData("", EnterMagazin1.ToString());
+Fill(size1, EnterMagazin1);
+Fill(size2, EnterMagazin2);
+Fill(size3, EnterMagazin3);
+
+
+Print(size1);
+Print(size2);
+Print(size3);
+
+
+PrintData("Интервал времени: ", EnterMagazin1.ToString());
 PrintData("-", ExitMagazin1.ToString());
 Console.WriteLine();
-PrintData("", EnterMagazin2.ToString());
+PrintData("Интервал времени: ", EnterMagazin2.ToString());
 PrintData("-", ExitMagazin2.ToString());
 Console.WriteLine();
-PrintData("", EnterMagazin3.ToString());
+PrintData("Интервал времени: ", EnterMagazin3.ToString());
 PrintData("-", ExitMagazin3.ToString());
 
-Console.WriteLine();
-Console.WriteLine(size1);
+
+int[] result = FindOverlap(size1, size2, size3);
+Print(result);
 
 
 
-
-/*
-//int overLap2 = FindOverlap(array4, array5, array6);
-//Console.WriteLine(overLap2);
-
-/*
-int length = GetIntValue(10, 20);
-int[] col = CreateArray(length);
-Print(col);
-Fill(col);
-Print(col);
-*/
-
-//PrintData("", overLap2.ToString());
-
-/*
+/*  Этот код работает, выдает лишние нули, но находит совпадения.
 int[] array1 = { 9, 10, 11, 12 };
 int[] array2 = { 10, 11, 12 };
 int[] array3 = { 11, 12, 13 };
