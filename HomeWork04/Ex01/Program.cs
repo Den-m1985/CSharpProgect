@@ -50,9 +50,9 @@ void Print(int[] array)
 }
 
 //Ищем общие часы
-void FindOverlap(int[] array1, int[] array2, int[] array3)
+int[] FindOverlap(int[] array1, int[] array2, int[] array3)
 {
-    int overLap = 0;
+    int[] overLap = new int[2];
     for (int i1 = 0; i1 < array1.Length; i1++)
     {
         for (int i2 = 0; i2 < array2.Length; i2++)
@@ -72,7 +72,7 @@ void FindOverlap(int[] array1, int[] array2, int[] array3)
         }
         //Console.WriteLine(overLap);
     }
-    //return overLap;
+    return overLap;
 }
 
 
@@ -81,12 +81,13 @@ void PrintData(string prefix, string value)
     Console.Write(prefix + value);
 }
 
+//Здесь вводим с консоли часы. 3 интервала часов.
 int EnterMagazin1 = ReedData("Введите час входа в магазин 1го массива ");
-int ExitMagazin1 = ReedData("Введите час выхода в магазин 1го массива ");
+int ExitMagazin1 = ReedData("Введите час выхода из магазина 1го массива ");
 int EnterMagazin2 = ReedData("Введите час входа в магазин 2го массива ");
-int ExitMagazin2 = ReedData("Введите час выхода в магазин 2го массива ");
+int ExitMagazin2 = ReedData("Введите час выхода из магазина 2го массива ");
 int EnterMagazin3 = ReedData("Введите час входа в магазин 3го массива ");
-int ExitMagazin3 = ReedData("Введите час выхода в магазин 3го массива ");
+int ExitMagazin3 = ReedData("Введите час выхода из магазина 3го массива ");
 
 
 int countHours1 = ExitMagazin1 - EnterMagazin1 + 1; //кол-во часов
@@ -124,7 +125,8 @@ Print(result);
 
 
 
-/*  Этот код работает, выдает лишние нули, но находит совпадения.
+// Этот код работает, выдает лишние нули, но находит совпадения.
+/*
 int[] array1 = { 9, 10, 11, 12 };
 int[] array2 = { 10, 11, 12 };
 int[] array3 = { 11, 12, 13 };
