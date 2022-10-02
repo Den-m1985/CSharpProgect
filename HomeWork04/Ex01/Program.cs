@@ -53,6 +53,7 @@ void Print(int[] array)
 int[] FindOverlap(int[] array1, int[] array2, int[] array3)
 {
     int count = 0;
+    int size = count.Length;
     int[] overLap = new int[count];
 
     for (int i1 = 0; i1 < array1.Length; i1++)
@@ -68,13 +69,14 @@ int[] FindOverlap(int[] array1, int[] array2, int[] array3)
                     {
                         //Если данные совпали
                         count = array1[i1];
+                        overLap[] = count;
                     }
                 }
             }
         }
     }
 
-    overLap[index] = array1[i1];
+    
     return overLap;
 }
 
