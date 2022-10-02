@@ -49,10 +49,12 @@ void Print(int[] array)
     Console.WriteLine();
 }
 
-//Ищем общие часы
+//Ищем общие часы  
 int[] FindOverlap(int[] array1, int[] array2, int[] array3)
 {
-    int[] overLap = new int[2];
+    int count = 0;
+    int[] overLap = new int[count];
+
     for (int i1 = 0; i1 < array1.Length; i1++)
     {
         for (int i2 = 0; i2 < array2.Length; i2++)
@@ -65,13 +67,14 @@ int[] FindOverlap(int[] array1, int[] array2, int[] array3)
                     if (array2[i2] == array3[i3])
                     {
                         //Если данные совпали
-                        overLap = array1[i1];
+                        count = array1[i1];
                     }
                 }
             }
         }
-        //Console.WriteLine(overLap);
     }
+
+    overLap[index] = array1[i1];
     return overLap;
 }
 
@@ -105,10 +108,9 @@ Fill(size2, EnterMagazin2);
 Fill(size3, EnterMagazin3);
 
 
-Print(size1);
-Print(size2);
-Print(size3);
-
+//Print(size1);
+//Print(size2);
+//Print(size3);
 
 PrintData("Интервал времени: ", EnterMagazin1.ToString());
 PrintData("-", ExitMagazin1.ToString());
@@ -121,6 +123,7 @@ PrintData("-", ExitMagazin3.ToString());
 
 
 int[] result = FindOverlap(size1, size2, size3);
+Console.WriteLine();
 Print(result);
 
 
