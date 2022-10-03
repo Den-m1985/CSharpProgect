@@ -14,6 +14,9 @@
 Ответ:
 11-12
 */
+// Не очень понятно для чего здесь даны кол-во людей т.к. данны интервалы времени и дан ответ.
+// Если сравнить пересечения массивов, то видно, что пересечения в интервале 11-12. И причем тут люди непонято.
+// Я сделал эту задачу так: ввод значений через консоль, сравнил массивы в циклах и  вывод результатов.
 
 // Считываем данные с консоли
 int ReedData(string line)
@@ -37,7 +40,7 @@ void Fill(int[] array, int from)
 }
 
 //Печатаем массив
-void Print(int[] array)
+void PrintArray(int[] array)
 {
     int i = 0;
     int size = array.Length;
@@ -53,9 +56,9 @@ void Print(int[] array)
 int[] FindOverlap(int[] array1, int[] array2, int[] array3)
 {
     int count = 0;
-    int size = count.Length;
-    int[] overLap = new int[count];
+    int[] overLap = new int[1];// Длина массива 2 цифры .т.к. часов не более 24.
 
+    // Здесь я сравниваю 3 массива сразу.
     for (int i1 = 0; i1 < array1.Length; i1++)
     {
         for (int i2 = 0; i2 < array2.Length; i2++)
@@ -68,15 +71,25 @@ int[] FindOverlap(int[] array1, int[] array2, int[] array3)
                     if (array2[i2] == array3[i3])
                     {
                         //Если данные совпали
-                        count = array1[i1];
-                        overLap[] = count;
+                        count = array3[i3];  // Здесь я запутался и не смог подобрать нужный аргумент массива.  
+
+                        // Длина массива 2 цифры .т.к. часов не более 24.
+                        // Записываем результат в массив.
+                        for (int index = 0; index < 1; index++)
+                        {
+                            overLap[index] = count;
+                        }
+
+                        //Печатаем массив.
+                        for (int index = 0; index < 1; index++)
+                        {
+                            //Console.WriteLine(overLap[index]); Если запустить код без метода, то выводится интервал времени 11-12
+                        }
                     }
                 }
             }
         }
     }
-
-    
     return overLap;
 }
 
@@ -109,10 +122,10 @@ Fill(size1, EnterMagazin1);
 Fill(size2, EnterMagazin2);
 Fill(size3, EnterMagazin3);
 
-
-//Print(size1);
-//Print(size2);
-//Print(size3);
+// Здесь я проверял правильность заполнения массивов.
+//PrintArray(size1);
+//PrintArray(size2);
+//PrintArray(size3);
 
 PrintData("Интервал времени: ", EnterMagazin1.ToString());
 PrintData("-", ExitMagazin1.ToString());
@@ -126,19 +139,32 @@ PrintData("-", ExitMagazin3.ToString());
 
 int[] result = FindOverlap(size1, size2, size3);
 Console.WriteLine();
-Print(result);
+Console.WriteLine("Наибольший промежуток времени: ");
+PrintArray(result);
 
 
 
-// Этот код работает, выдает лишние нули, но находит совпадения.
+// Этот код работает, но он обсолютно не знаком:
 /*
-int[] array1 = { 9, 10, 11, 12 };
+IEnumerable<int> both = array.Intersect(array1);
+
+foreach (int id in both)
+    Console.WriteLine(id);*/
+
+/*
+int[] array1 = { 11, 12, 13 };
 int[] array2 = { 10, 11, 12 };
-int[] array3 = { 11, 12, 13 };
+int[] array3 = { 9, 10, 11, 12};
+
+int count = 0;
+int[] overLap = new int[1];
+//for (int index = 0; index < 3; index++)
+//{
+//    overLap[index] = new Random().Next(1, 10);
+//}
 
 
 
-int overLap = 0;
 for (int i1 = 0; i1 < array1.Length; i1++)
 {
     for (int i2 = 0; i2 < array2.Length; i2++)
@@ -151,20 +177,25 @@ for (int i1 = 0; i1 < array1.Length; i1++)
                 if (array2[i2] == array3[i3])
                 {
                     //Если данные совпали
-                    overLap = array1[i1];
+                    count = array3[i3];  // Здесь я запутался и не смог подобрать нужный аргумент.  
+                   
+                    // Длина массива 2 цифры .т.к. часов не более 23.
+                    // Записываем результат в массив.
+                    for (int index = 0; index < 1; index++)
+                    {
+                        overLap[index] = count;
+                    }
+
+                    //Печатаем массив.
+                    for (int index = 0; index < 1; index++)
+                    {
+                        Console.WriteLine(overLap[index]);
+                        Console.WriteLine("overLap [{0}] = {1}", index, overLap[index]);// Здесь я смотрел присвоеные индексы.
+                    }
                 }
             }
         }
     }
-    Console.WriteLine(overLap);
 }
 */
 
-
-
-// Этот код работает, но он обсолютно не знаком:
-/*
-IEnumerable<int> both = array.Intersect(array1);
-
-foreach (int id in both)
-    Console.WriteLine(id);*/
