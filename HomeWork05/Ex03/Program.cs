@@ -4,13 +4,13 @@
 
 
 // Создаем длину массива
-double [] Create(double len)
+double[] Create(double len)
 {
-    return new double[len];
+    return new double[5];
 }
 
 // Заполняем массив
-void Fill(int[] array, int min, int max)
+void Fill(double[] array, int min, int max)
 {
     int size = array.Length;
     for (int i = 0; i < size; i++)
@@ -25,38 +25,49 @@ string Print(double[] array)
     return "[" + String.Join(", ", array) + "]"; //Скобки "[" для эфектного вывода. Разбирали на семинаре 4.
 }
 
-// Находим разницу чисел.
-double SearchSubstraction(double[] array)
+// Находим max.
+double FindMax(double[] array)
 {
     int size = array.Length;
-    double min = 0;
-    double max = 0;
+    double max = array[0];
 
     for (int i = 0; i < size; i++)
     {
         if (array[i] > max)
         {
-           max = array[i];
+            max = array[i];
         }
     }
+    return max;
+}
+
+// Находим min.
+double FindMin(double[] array)
+{
+    int size = array.Length;
+    double min = array[0];
+
     for (int i = 0; i < size; i++)
     {
-        if (array[i] < max)
+        if (array[i] < min)
         {
-           min = array[i];
+            min = array[i];
         }
     }
-    double numberSubtraction = max - min;
-    return numberSubtraction;
+    return min;
 }
 
 
-
-double[] arr = Create(12);
-Fill(arr, 0, 999);
+double[] arr = Create(5);
+Fill(arr, -10, 100);
 Console.WriteLine(Print(arr));
-double result = SearchSubstraction(arr);
+double max = FindMax(arr);
+double min = FindMin(arr);
+double result = max - min;
+Console.Write("max: ");
+Console.WriteLine(max);
+Console.Write("min: ");
+Console.WriteLine(min);
 Console.Write("Разница между max и min: ");
-Console.WriteLine((result));
-//FindSum(result);
+Console.WriteLine(result);
 
