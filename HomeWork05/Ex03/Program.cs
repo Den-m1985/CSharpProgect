@@ -4,9 +4,9 @@
 
 
 // Создаем длину массива
-double[] Create(double len)
+double[] Create(int len)
 {
-    return new double[5];
+    return new double[len];
 }
 
 // Заполняем массив
