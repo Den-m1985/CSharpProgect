@@ -4,10 +4,10 @@
 //b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
 
-int ReedData(string line)
+double ReedData(string line)
 {
     Console.Write(line);
-    int number = int.Parse(Console.ReadLine() ?? "");
+    double number = int.Parse(Console.ReadLine() ?? "");
     return number;
 }
 
@@ -18,31 +18,39 @@ void PrintData(string prefix, string value)
 }
 
 // Находим точки
-double FindPoint(int x, int b, int k)
+double FindPointX(double b1, double b2, double k1, double k2)
 {
-    double y = 0;
-    return y = k * x + b;;
+    double x = 0;
+    /*
+    y = k1 * x + b1, y = k2 * x + b2;
+    k2 * x + b2 = k1 * x + b1;
+    x*(k2 - k1) = b1 - b2;
+    */
+    x = (b1 - b2) / (k2 - k1);
+
+    return x;
 }
 
 // Находим пересечение.
-double FindXross(int x, int b, int k)
+double FindPointY(double x, double k2, double b2)
 {
     double y = 0;
-    return y = k * x + b;;
+    // Подставляем Х из первого уравнения
+    y = k2 * x + b2;
+
+    return y;
 }
 
-int b1 = ReedData("Введите координату точки b1: ");
-int k1 = ReedData("Введите координату точки k1: ");
-int b2 = ReedData("Введите координату точки b2: ");
-int k2 = ReedData("Введите координату точки k2: ");
 
-int x1 = 1;
-int x2 = 2;
-
-double result1 = FindPoint(x1, b1, k1);
-double result2 = FindPoint(x2, b1, k1);
-double result3 = FindPoint(x1, b2, k2);
-double result4 = FindPoint(x2, b2, k2);
+double b1 = ReedData("Введите координату точки b1: ");
+double k1 = ReedData("Введите координату точки k1: ");
+double b2 = ReedData("Введите координату точки b2: ");
+double k2 = ReedData("Введите координату точки k2: ");
 
 
-PrintData("Точка пересечения: ", result1.ToString());
+double resultX = FindPointX(b1, b2, k1, k2);
+double resultY = FindPointY(resultX, k2, b2);
+
+
+PrintData("Точка пересечения по X: ", resultX.ToString());
+PrintData("Точка пересечения по Y: ", resultY.ToString());
