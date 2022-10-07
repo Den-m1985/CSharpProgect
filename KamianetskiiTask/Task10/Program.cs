@@ -1,5 +1,5 @@
-﻿// 9. Показать последнюю цифру трёхзначного числа
-//Смотря как считать? слева считать или справа?
+﻿// 10. Показать вторую цифру трёхзначного числа
+
 
 
 int ReadData(string line)
@@ -13,7 +13,7 @@ int ReadData(string line)
 int Calculate(int a)
 {
     int b = 0;
-    b = a % 10;
+    b = (a/10) % 10;
     return b;
 }
 
@@ -26,6 +26,6 @@ void PrintData(string prefix, int value)
 
 int a = ReadData("Введите 3х значное число: ");
 
-if (a > 99 && a < 1000) PrintData("Последняя цифра: ", Calculate(a));
+if (a > 99 && a < 1000) PrintData("Вторая цифра: ", Calculate(a));
 else Console.WriteLine("Что-то пошло не так");
 

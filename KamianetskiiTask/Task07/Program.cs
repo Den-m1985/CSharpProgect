@@ -16,11 +16,15 @@ int[] CreateArray(int length)
 }
 
 
-void FillArray(int[] array)
+void FillArray(int[] array, int a)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        array[i] = array[i]+1;
+       
+        array[i] = (a-1) +1;
+        a ++;
+       
+        //array[i] = a.Next(1);
     }
 }
 
@@ -31,6 +35,7 @@ void PrintArray(int [] array)
     {
         Console.Write(array[i] + " ");
     }
+    Console.WriteLine();
 }
 
 
@@ -38,9 +43,9 @@ void PrintArray(int [] array)
 int a = ReadData("Введите отрицательное число: ");
 int b = ReadData("Введите положительное число: ");
 
-int length = b-a;
+int length = b-a+1;   //+1 Нужен для отображения полного списка чисел.
 int[] arr = CreateArray(length);
-int result = FillArray(arr);
-PrintArray(result);
-
+PrintArray(arr);
+FillArray(arr,a);
+PrintArray(arr);
 
