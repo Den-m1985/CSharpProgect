@@ -35,14 +35,14 @@ void PrintArray(int[,] array)
 
 
 //Находим число
-int FindDigit(int[,] array, int x, int y)
+int FindDigit(int[,] array, int a, int b)
 {
     int result = 0;
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            result = array[x, y];
+            result = array[a, b];
         }
     }
     return result;
@@ -57,17 +57,18 @@ int ReadData(string line)
 }
 
 
-
-int[,] array = CreateArray(4, 4);
+int a = 3; //Размеры массива.
+int b = 4;
+int[,] array = CreateArray(a, b); //Массив 3х4.
 PrintArray(array);
 int x = ReadData("Введите координату по х: ");
 int y = ReadData("Введите координату по y: ");
-if (x >= 0 && x <= 3)
+if (x >= 0 && x < b)
 {
-    if (y >= 0 && y <= 3)
+    if (y >= 0 && y < a)
     {
         Console.Write("Пересение индексов: ");
-        Console.Write(FindDigit(array, y, x));  //i по х; j по у.
+        Console.Write(FindDigit(array, y, x));  //i по y; j по x.
     }
     else Console.Write("Такого числа в массиве нет");
 }

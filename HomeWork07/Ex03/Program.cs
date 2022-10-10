@@ -33,41 +33,32 @@ void PrintArray(int[,] array)
 }
 
 
-//Находим число
-void FindDigit(int[,] array)
+//Находим средне арифметическое.
+void FindDigit(int[,] array, int b)
 {
-    double[] a = new double[4];
-    //int result = 0;
+    double[] a = new double[b];
+
     for (int i = 0; i < array.GetLength(0); i++)
     {
         for (int j = 0; j < array.GetLength(1); j++)
         {
-            //sum = sum + array[i, 1];
             a[j] = a[j] + array[i, j];
-            //result = array.GetAvarageForColomn(1)
         }
     }
-    //result = a[i] / 3;
 
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < b; i++)
     {
-        //result = a[i] / 3;
-        //Console.Write((a[i] / 3)  + "\t");
-        Console.Write("{0,2:F2}",(a[i] / 3)  + "\t");
+        Console.Write("{0,6:F1}",(a[i] / 3));
     }
-    //return result;
 }
 
+int y = 3; //Размеры массива.
+int x = 4;
+int[,] array = CreateArray(y, x);
 
-int[,] array = CreateArray(3, 4);
 PrintArray(array);
 Console.WriteLine();
-//int[,] ar = CreateArray(3, 1);
-//PrintArray(ar);
-
 
 Console.Write("Средне арифметическое по слобцам: ");
-FindDigit(array);
+FindDigit(array, x);
 
-
-//return "[" + String.Join(", ", array) + "]";
