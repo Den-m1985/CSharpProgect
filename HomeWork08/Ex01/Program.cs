@@ -72,17 +72,16 @@ void PrintArraySum(int[] array, int size)
 void FindMin(int[] array, int size)
 {
     int min = array[0];
+    int index = 0;
     for (int i = 0; i < size; i++)
     {
         if (array[i] < min)
         {
             min = array[i];
+            index = i;
         }
     }
-    for (int i = 0; i < size; i++)
-    {
-        if (array[i] == min) Console.WriteLine($"Строка с наименьшей суммой: {i}");
-    }
+    Console.WriteLine($"Строка (начиная с 0) с наименьшей суммой: {index}");
 }
 
 

@@ -9,23 +9,12 @@ int ReadData(string line)
 }
 
 
-int cordinat = ReadData("Введите координату х: ");
+int cordinat = ReadData("Введите номер четверти: ");
 
 
 
-if (cordinat == 0) 
-{
-    if (y > 0) Console.WriteLine($"Координаты: {x} и {y} находятся в 1й четверти.");
-}
-if (x < 0)
-{
-    if (y > 0) Console.WriteLine($"Координаты: {x} и {y} находятся в 2й четверти.");
-}
-if (x < 0)
-{
-    if (y < 0) Console.WriteLine($"Координаты: {x} и {y} находятся в 3й четверти.");
-}
-if (x > 0)
-{
-    if (y < 0) Console.WriteLine($"Координаты: {x} и {y} находятся в 4й четверти.");
-}
+if (cordinat == 1) Console.WriteLine($"номер четверти: {cordinat} соответствует x>0, y>0.");
+if (cordinat == 2) Console.WriteLine($"номер четверти: {cordinat} соответствует x<0, y>0.");
+if (cordinat == 3) Console.WriteLine($"номер четверти: {cordinat} соответствует x<0, y<0.");
+if (cordinat == 4) Console.WriteLine($"номер четверти: {cordinat} соответствует x>0, y<0.");
+

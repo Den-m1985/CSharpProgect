@@ -8,5 +8,16 @@
 //27(0,0,1) 90(0,1,1)
 //26(1,0,1) 55(1,1,1)
 
-
-
+int [,,] a = new int [2,2,2];
+for (int i = 0; i < a.GetLength(0); i++)
+{
+    for (int j = 0; j < a.GetLength(1); j++)
+    {
+        for (int k = 0; k < a.GetLength(0); k++)
+        {
+            a[i,j,k] = new Random().Next(1,10);
+        }
+        Console.WriteLine(a);
+    }
+    Console.WriteLine();
+}
