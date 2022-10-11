@@ -12,7 +12,7 @@
 
 
 //произведение двух матриц
-
+/*
 for (int i = 0; i < length; i++)
 {
     for (int j = 0; j < length; j++)
@@ -20,3 +20,4 @@ for (int i = 0; i < length; i++)
         
     }
 }
+*/
