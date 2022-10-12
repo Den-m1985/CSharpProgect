@@ -5,12 +5,12 @@
 
 //void one_dimensional_arrays() // одномерный массив из 5 элементов, который заполняется пользователем
 //{
-int[] one; // сначала создаю одномерный массив
+
 int[] A = new int[5]; // потом выделяю под него память для 5 элементов
 for (int i = 0; i < 5; i++)                 /*с помощью цикла for я заполняю массив с клавиатуры*/
 {
-    A[i] = int.Parse(Console.ReadLine()); Array.Sort(A);
-    //Console.WriteLine("Введите пять целых чисел через пробел:");
+    A[i] = int.Parse(Console.ReadLine()??""); Array.Sort(A);
+    Console.WriteLine("Введите пять целых чисел через пробел:");
     //int[] one = Console.ReadLine().Split().Select(i => int.Parse(i)).ToArray();
 
     // найду максимальный элемент с помощью метода расширения Max 

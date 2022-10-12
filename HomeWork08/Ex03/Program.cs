@@ -8,17 +8,61 @@
 //27(0,0,1) 90(0,1,1)
 //26(1,0,1) 55(1,1,1)
 
-int [,,] a = new int [2,2,2];
 
-for (int i = 0; i < a.GetLength(0); i++)
+void CreateArray(int[,,] array)
 {
-    for (int j = 0; j < a.GetLength(1); j++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int k = 0; k < a.GetLength(0); k++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            a[i,j,k] = new Random().Next(1,10);
+            for (int k = 0; k < array.GetLength(2); k++)
+            {
+                array[i, j, k] = new Random().Next(10, 99);
+            }
         }
-        Console.WriteLine(a);
     }
-    Console.WriteLine();
 }
+
+
+
+void PrintArray(int[,,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int k = 0; k < array.GetLength(2); k++)
+            {
+                Console.Write(array[i, j, k]);
+                Console.Write($" ({i},{j},{k}) ");
+            }
+            Console.WriteLine();
+        }
+    }
+}
+
+
+//Этот метод показывает масив по слоям.
+/*
+void PrintArray(int[,,] array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
+    {
+        Console.WriteLine($"Индекс i={i} отвечает за обьем массива т.е. Z");
+        for (int j = 0; j < array.GetLength(1); j++)
+        {
+            for (int k = 0; k < array.GetLength(2); k++)
+            {
+                Console.Write(array[i, j, k]);
+                Console.Write($" ({j},{k}) ");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine();
+    }
+}
+*/
+
+int[,,] array = new int[2, 2, 2];
+CreateArray(array);
+PrintArray(array);
