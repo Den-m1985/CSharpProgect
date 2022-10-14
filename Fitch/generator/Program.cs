@@ -108,3 +108,37 @@ int[] GetUniqueSequencesWithMix(int count, int startValue = 10)
 int[] result2 = GetUniqueSequencesWithMix(10);
 //Console.Write(result2 + " ");  //Не работает
 
+Console.WriteLine();
+Console.WriteLine();
+
+//3 способ.
+int k = 0;
+int temp = 0;
+int flagItem = 0;
+int[] set3 = new int[10];
+int size = set3.Length;
+while (k < size)
+{
+    int flag = 0;
+    temp = new Random().Next(10, 99);
+    for (int i = 0; i < size; i++)
+    {
+        if (set3[i] == temp)
+        {
+            flagItem++;
+            flag++;
+        }
+    }
+    if (flag == 0)
+    {
+        set3[k] = temp;
+        Console.Write(set3[k] + " ");
+        k++;
+    }
+}
+Console.WriteLine();
+Console.WriteLine("Кол-во попыток:" + flagItem);
+
+
+
+
