@@ -64,7 +64,7 @@ int[] GetUniqueSequencesWithRandomPos(int count, int startValue, int length)
     while (index < size)
     {
         int value = 0;
-        while (Array.IndexOf(set, value) != -1)
+        while (Array.IndexOf(set, value) != -1)  //!= -1 Означает, что такого элемента нет.
         {
             value = Random.Shared.Next(startValue, startValue + length);
             //step++;
