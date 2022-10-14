@@ -24,3 +24,4 @@ Console.WriteLine();
 var result2 = Example2();
 Console.WriteLine($"{result2.min}");
 Console.WriteLine($"{result2.max}");
+
