@@ -5,9 +5,9 @@
 
 //void one_dimensional_arrays() // одномерный массив из 5 элементов, который заполняется пользователем
 //{
-
+/*
 int[] A = new int[5]; // потом выделяю под него память для 5 элементов
-for (int i = 0; i < 5; i++)                 /*с помощью цикла for я заполняю массив с клавиатуры*/
+for (int i = 0; i < 5; i++)                 //с помощью цикла for я заполняю массив с клавиатуры
 {
     A[i] = int.Parse(Console.ReadLine()??""); Array.Sort(A);
     Console.WriteLine("Введите пять целых чисел через пробел:");
@@ -17,7 +17,7 @@ for (int i = 0; i < 5; i++)                 /*с помощью цикла for �
     Array.Sort(A);
     int maxA = A[A.Length - 1];
     Console.WriteLine("Maximal element:" + A);
-}
+}*/
 /*
 int minA = A[5];
 for (int i = 0; i < 5; i++)
@@ -73,3 +73,11 @@ while (amount < amTotal)
 }
 Console.WriteLine($"Среднее арифметическое этих чисел: {sum / amTotal}");
 */
+
+
+int[] array = new int[5];
+for (int i = 0; i < 5; i++)
+{
+    array[i] = Convert.ToInt32(Console.ReadLine());
+}
+Console.Write(string.Join(" ", array));
